@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Cima - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=Ballet:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Menu a tendina -->
+    <nav class="menu-dropdown" id="menuDropdown">
+        <div class="menu-nav">
+            <a href="#chi-sono" class="menu-nav-link">Chi sono</a>
+            <a href="#passioni" class="menu-nav-link">Passioni & Hobbies</a>
+            <a href="#progetti" class="menu-nav-link">Progetti</a>
+            <a href="#contatti" class="menu-nav-link">Contatti</a>
+        </div>
+    </nav>
+    <style>
+        /* Menu a tendina */
+.menu-dropdown {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: #f1f1f1;
+    padding: 80px 60px 40px 60px;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.menu-dropdown.active {
+    transform: translateY(0);
+}
+
+.menu-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.menu-nav-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #BE1622;
+    text-decoration: none;
+    border-bottom: 3px solid #BE1622;
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    min-width: 150px;
+}
+
+.menu-nav-link:hover {
+    color: #FFD93D;
+    border-bottom-color: #FFD93D;
+    transform: translateY(-3px);
+}
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Archivo', sans-serif;
+    overflow-x: hidden;
+    background-color: #FFD93D;
+}
+
+/* White background section */
+.white-section {
+    background-color: white;
+    padding: 60px 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    color: #000;
+}
+
+.menu-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 60px;
+    padding: 40px 20px;
+    max-width: 100%;
+}
+
+/* Hero Title Section */
+.hero-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-title h1 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+    color: white;
+    letter-spacing: 8px;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-family: 'Ballet', cursive;
+    font-size: 48px;
+    color: #BE1622;
+    margin-top: -10px;
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Mi Presento Card */
+.card-mi-presento {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.text-box {
+    padding: 30px;
+    flex: 1;
+}
+
+.text-box p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+.cursive-title {
+    font-family: 'Ballet', cursive;
+    font-size: 64px;
+    color: #BE1622;
+    margin-bottom: 20px;
+}
+
+.photo-box {
+    position: relative;
+    flex: 0 0 350px;
+}
+
+.photo-container {
+    width: 100%;
+    height: 300px;
+    background: #E8E8E8;
+    overflow: hidden;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-label {
+    background: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.photo-label h3 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #BE1622;
+    margin: 0;
+}
+
+/* Le Mie Origini Card */
+.card-origini {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.origini-photo-box {
+    position: relative;
+    flex: 0 0 350px;
+}
+
+.origini-photo-container {
+    width: 100%;
+    height: 300px;
+    background: white;
+    overflow: hidden;
+}
+
+.origini-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.origini-label {
+    background: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.origini-label h3 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: #BE1622;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.origini-text-box {
+    padding: 30px;
+    flex: 1;
+}
+
+.origini-text-box .cursive-title {
+    font-family: 'Ballet', cursive;
+    font-size: 64px;
+    color: #BE1622;
+    margin-bottom: 20px;
+}
+
+.origini-text-box p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+/* Passioni e Hobbies Section */
+.section-title {
+    text-align: right;
+    margin: 80px 0 60px 0;
+}
+
+.section-title h2 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #BE1622;
+    margin-bottom: -100px;
+    letter-spacing: 2px;
+    background-color: transparent;
+    margin-top: -100px;
+}
+
+/* Hiking Section */
+.hiking-complete-section {
+    padding: 60px 0 80px 0;
+    background-color: white;
+}
+
+.hiking-main-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #BE1622;
+    margin-bottom: 30px;
+    padding: 0 40px;
+}
+
+.hiking-main-description {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    padding: 0 40px;
+}
+
+.hiking-media-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hiking-media-box {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hiking-video,
+.hiking-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+.hiking-media-left {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hiking-media-right {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hiking-yellow-stripe {
+    background-color: #FFD93D;
+    width: 1140px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 30%;
+    z-index: 2;
+}
+
+.hiking-logo-container {
+    background-color: white;
+    padding: 40px;
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: -130px;
+}
+
+.hiking-logo {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    object-fit: contain;
+}
+
+/* Concerti Section */
+.concerti-new-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.concerti-main-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #BE1622;
+    margin-bottom: 30px;
+    padding: 0 40px;
+}
+
+.concerti-main-description {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    padding: 0 40px;
+}
+
+.concerti-videos-container {
+    display: flex;
+    gap: 80px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 40px 80px 100px;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+.concerto-item {
+    flex: 0 0 auto;
+    position: relative;
+    margin-left: 60px;
+}
+
+.concerto-video-wrapper {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.concerto-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.concerto-label {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    background-color: transparent;
+    padding: 0;
+    transform-origin: center center;
+    z-index: 10;
+    width: 200px;
+}
+
+.concerto-name {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #FFD93D;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+}
+
+.concerti-videos-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.concerti-videos-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.concerti-videos-container::-webkit-scrollbar-thumb {
+    background: #BE1622;
+    border-radius: 10px;
+}
+
+.concerti-videos-container::-webkit-scrollbar-thumb:hover {
+    background: #BE1622;
+}
+
+.concerto-video-wrapper::after {
+    content: 'Caricamento video...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Musical Section */
+.musical-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #BE1622;
+    margin-bottom: 20px;
+}
+
+.musical-description {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 40px;
+    max-width: 1000px;
+}
+
+.musical-images {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.musical-video {
+    flex: 0 0 280px;
+    height: 350px;
+    background: #E8E8E8;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.musical-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.concerti-video1 {
+    position: relative;
+}
+
+/* Ispirazioni Section */
+.ispirazioni-section {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.ispirazioni-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    color: #BE1622;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.inspiration-card {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.inspiration-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+}
+
+.inspiration-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.inspiration-content {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    text-align: left;
+}
+
+.inspiration-name {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 42px;
+    color: #BE1622;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.inspiration-description {
+    font-family: 'Archivo', sans-serif;
+    font-size: 18px;
+    color: white;
+    line-height: 1.5;
+    max-width: 350px;
+}
+
+.inspiration-card:hover .inspiration-overlay {
+    opacity: 1;
+}
+
+.inspiration-card:hover .inspiration-image {
+    transform: scale(1.05);
+}
+
+/* Processo di Ricerca Section */
+.processo-ricerca-section {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.processo-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    color: #BE1622;
+    margin-bottom: 80px;
+    letter-spacing: 2px;
+}
+
+.yellow-stripe-bg {
+    background-color: #FFD93D;
+    padding: 60px 40px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+}
+
+.logo-item img {
+    max-width: 250px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Sezione Agorastoria */
+.agorastoria-section {
+    padding: 80px 0 60px 0;
+    background-color: white;
+}
+
+.agorastoria-yellow-box {
+    background-color: #FFD93D;
+    padding: 60px 40px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    margin-top: -450px;
+}
+
+.agorastoria-description {
+    font-family: 'Archivo', sans-serif;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #000;
+    margin: 0;
+    max-width: 800px;
+    align-items: center;
+    justify-content: center;
+}
+
+.agorastoria-logo-container {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agorastoria-logo-container img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+}
+
+/* Sezione Contatti */
+.contatti-section {
+    padding: 100px 0 80px 0;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.contatti-title-container {
+    position: relative;
+    text-align: right;
+    padding: 0 60px;
+}
+
+.contatti-title-main {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    color: #BE1622;
+    letter-spacing: 8px;
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.contatti-title-overlay {
+    font-family: 'Ballet', cursive;
+    font-size: 90px;
+    color: #FFD93D;
+    position: absolute;
+    top: -10px;
+    right: 60px;
+    z-index: 1;
+    opacity: 0.8;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Footer */
+.portfolio-footer {
+    background-color: transparent;
+    border-top: 4px solid #FFD93D;
+    padding: 60px 40px;
+}
+
+.footer-logo {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.footer-copyright {
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-nav-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-nav-link:hover {
+    color: #BE1622;
+    border-bottom-color: #BE1622;
+    transform: translateY(-2px);
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.footer-legal-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-legal-link:hover {
+    color: #BE1622;
+}
+
+.footer-separator {
+    color: #333;
+    font-size: 16px;
+}
+
+.footer-links-mobile {
+    display: none;
+}
+
+
+
+/* Progetti Universitari Section */
+.progetti-section {
+    padding: 80px 20px 100vh 20px;
+    position: relative;
+}
+
+.progetti-header {
+    position: relative;
+    margin-bottom: 60px;
+    padding: 20px;
+}
+
+.progetti-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    color: #BE1622;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+.progetti-subtitle {
+    font-family: 'Ballet', cursive;
+    font-size: 72px;
+    color: #FFD93D;
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+    opacity: 0.8;
+    justify-content: flex-start;
+}
+
+.moodboard-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.moodboard-fixed {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: 0px;
+    z-index: 1;
+}
+
+.moodboard-fixed img {
+    width: 100%;
+    height: 800;
+    display: block;
+}
+
+.progetti-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Paralume Betty Boop Section */
+.paralume-section {
+    background-color: white;
+    margin-top: -50px;
+}
+
+.paralume-section1 {
+    margin-top: 15px;
+}
+
+.paralume-section2 {
+    margin-top: -500px;
+}
+
+.paralume-container {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.paralume-image {
+    flex: 0 0 400px;
+}
+
+.paralume-image1 {
+    flex: 0 0 400px;
+    margin-top: -200px;
+}
+
+.paralume-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.paralume-info {
+    flex: 1;
+    background: #FFD93D;
+    padding: 60px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-right: -10px;
+    justify-content: end;
+    margin-top: 40px;
+}
+
+.progetti-subtitle1 {
+    justify-content: end;
+    font-size: 50px;
+    font-family: 'Ballet';
+    color: #FFD93D;
+    position: relative;
+    margin-top: -35px;
+}
+
+.paralume-title-main {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    color: #BE1622;
+    position: relative;
+    z-index: 2;
+}
+
+.paralume-title-cursive {
+    font-family: 'Ballet', cursive;
+    font-size: 70px;
+    color: #FFD93D;
+    position: relative;
+    z-index: 1;
+    opacity: 0.8;
+    justify-content: flex-start;
+}
+
+.paralume-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #000;
+}
+
+
+
+    </style>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">A.C.</div>
+        <svg class="menu-icon" id="menuToggle" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="30" height="3" fill="#000"/>
+            <rect y="13" width="30" height="3" fill="#000"/>
+            <rect y="26" width="30" height="3" fill="#000"/>
+        </svg>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Hero Title -->
+        <div class="hero-title">
+            <h1>AURORA CIMA</h1>
+            <div class="hero-subtitle">Portfolio Personale</div>
+        </div>
+
+        <!-- Cards Container -->
+        <div class="cards-container">
+            
+            <!-- Mi Presento Card -->
+            <div class="card-mi-presento">
+                <div class="text-box">
+                    <div class="cursive-title">Mi presento</div>
+                    <p>
+                        Sono una studentessa di design presso l'Università degli studi di San Marino. 
+                        Ho frequentato il Liceo Linguistico "T. Mamiani" di Pesaro, con indirizzo esabac, 
+                        ottenendo un diploma nel 2021 e questo anno accademico il corso di architettura a Polimi. 
+                        Oltre alla passione per il design e l'architettura cerco di portare avanti anche quella 
+                        per lo spettacolo, e cui fin da piccola partecipo, specialmente al musical, danza e cinema. 
+                        In futuro mi piacerebbe lavorare come scenografa per spettacoli teatrali, cinematografici e concerti.
+                    </p>
+                </div>
+                
+                <div class="photo-box">
+                    <div class="photo-container">
+                        <!-- Inserisci qui l'immagine di Aurora -->
+                        <img src="../cima_aurora_portfolio/img/foto_figma/foto_occhiali.jpg" alt="Aurora Cima">
+                    </div>
+                    <div class="photo-label">
+                        <h3>CIAO!</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Le Mie Origini Card -->
+            <div class="card-origini">
+                <div class="origini-photo-box">
+                    <div class="origini-photo-container">
+                        <!-- Inserisci qui l'immagine di Carpegna -->
+                        <img src="../cima_aurora_portfolio/img/foto_figma/carpegna.jpg" alt="Carpegna">
+                    </div>
+                    <div class="origini-label">
+                        <h3>SALUTI DA<br>CARPEGNA</h3>
+                    </div>
+                </div>
+
+                <div class="origini-text-box">
+                    <div class="cursive-title">Le mie origini</div>
+                    <p>
+                        Sono una studentessa di design presso l'Università degli studi di San Marino. 
+                        Ho frequentato il Liceo Linguistico "T. Mamiani" di Pesaro, con indirizzo esabac, 
+                        ottenendo un diploma nel 2021 e questo anno accademico il corso di architettura a Polimi. 
+                        Oltre alla passione per il design e l'architettura cerco di portare avanti anche quella 
+                        per lo spettacolo, e cui fin da piccola partecipo, specialmente al musical, danza e cinema. 
+                        In futuro mi piacerebbe lavorare come scenografa per spettacoli teatrali, cinematografici e concerti.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        </main>
+        <!-- White Background Section -->
+    <section class="white-section">
+        <div class="main-content" style="margin-top: 0;">
+
+        <!-- Passioni e Hobbies Section -->
+        <div class="section-title">
+            <div class="progetti-header">
+                <h2 class="progetti-title">PASSIONI E HOBBIES</h2>
+                <div class="progetti-subtitle1 justify-content-end">Passioni e Hobbies</div>
+            </div>
+            
+        </div>
+        <!-- Hiking Section Completa -->
+<section class="hiking-complete-section">
+    <div class="container-fluid">
+        <!-- Titolo e Descrizione -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="hiking-main-title">HIKING</h3>
+                <p class="hiking-main-description col-7">
+                    Essendo nata e cresciuta in un ambiente montano, sono sempre stata affascinata dai 
+                    paesaggi che mi circondano e quest'anno ho avuto la possibilità di poter viaggiare con 
+                    lo zaino in spalla assieme ai miei compagni di università lungo la "Via degli dei" che 
+                    attraversa l'Appennino tosco-Emiliano.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sezione Media con Fascia Gialla -->
+    <div class="hiking-media-section">
+        <div class="container-fluid px-0">
+            <div class="row g-0">
+                <!-- Video Sinistra -->
+                <div class="col-12 col-md-4">
+                    <div class="hiking-media-box hiking-media-left">
+                        <video autoplay loop muted playsinline class="hiking-video">
+                            <source src="img/foto_figma/vdeglidei.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                
+                <!-- Logo Centro con Fascia Gialla -->
+                <div class="col-12 col-md-4">
+                    <div class="hiking-yellow-stripe">
+                        <div class="hiking-logo-container">
+                            <img src="../cima_aurora_portfolio/img/foto_figma/logo-8-via_degli_dei.jpg" alt="Via degli Dei Logo" class="hiking-logo">
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Concerti Section -->
+<section class="concerti-new-section">
+    <div class="container-fluid">
+        <!-- Titolo e Descrizione -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="concerti-main-title">CONCERTI</h3>
+                <p class="concerti-main-description col-6">
+                    Una delle più grandi passioni che coltivo sono la musica dal vivo e lo spettacolo in 
+                    generale. Qui alcuni degli ultimi concerti a cui ho potuto assistere negli ultimi due anni.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Video Concerti -->
+        <div class="row">
+            <div class="col-12">
+                <div class="concerti-videos-container">
+                    
+                    <!-- Video 1 - Tate McRae -->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="img/foto_figma/tate.mp4" type="video/webm" alt="Tate Mcrae">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">Tate Mcrae</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 2 - Taylor Swift -->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/TAY.mp4" type="video/webm"alt="Taylor Swift">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">Taylor Swift</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 3 - Lorde -->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/LORDE.mp4" type="video/webm"alt="Lorde">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">Lorde</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 4 - Olivia Rodrigo  -->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/ballad.mp4" type="video/webm" alt="Olivia Rodrigo">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">Olivia Rodrigo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video 5 - Harry Styles  -->
+                    
+                    
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/harrystyles.mp4" type="video/webm"alt="Harry Styles">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">HARRY STYLES</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--5sos-->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/5sos.mp4" type="video/webm"alt="5SOS">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">5SOS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Niall-->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/niall.mp4" type="video/webm"alt="Niall Horan">
+                                
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">NIALL HORAN</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Gracie Abrams-->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/gracie.mp4" type="video/webm"alt="Gracie Abrams">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">GRACIE ABRAMS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<!-- Musical e Spettacolo Section -->
+        <section class="concerti-new-section">
+    <div class="container-fluid">
+        <!-- Titolo e Descrizione -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="concerti-main-title">MUSICA E SPETTACOLO</h3>
+                <p class="concerti-main-description col-6">
+                    Sempre stata appassionata del mondo dello spettacolo e della danza in particolare, ho praticato musical e partecipato a numerosi spettacoli teatrali durante il periodo liceale.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Video Musical -->
+        <div class="row">
+            <div class="col-12">
+                <div class="concerti-videos-container">
+                    
+                    <!-- Video 1 - Un passo mio -->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/unpassomio.mp4" type="video/webm" alt="Un passo mio">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">MSM 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 2 - Asilo -->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/VID-20230610-WA0059.mp4" type="video/webm"alt="Corpo di ballo Asilo">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">Corpo di ballo</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 3 - Verona -->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/VID-20230614-WA0111 (1).mp4" type="video/webm"alt="Verona">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">MSM 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 4 - npde  -->
+                    <div class="concerto-item">
+                        <div class="concerto-video-wrapper">
+                            <video autoplay loop muted playsinline class="concerto-video">
+                                <source src="../cima_aurora_portfolio/img/foto_figma/VID-20230620-WA0049.mp4" type="video/webm" alt="npde">
+                            </video>
+                            <div class="concerto-label">
+                                <span class="concerto-name">La famiglia</span>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Progetti Universitari Section -->
+    <section class="progetti-section">
+        <div class="progetti-content">
+            <div class="progetti-header">
+                <h2 class="progetti-title">PROGETTI UNIVERSITARI</h2>
+                <div class="progetti-subtitle">Progetti Universitari</div>
+            </div>
+
+            <!-- Moodboard Fixed Background -->
+            <div class="moodboard-container">
+                <div class="moodboard-fixed">
+                    <img src="../cima_aurora_portfolio/img/foto_figma/collage_portfolio.jpg" alt="Moodboard Betty Boop">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Paralume Betty Boop Section -->
+
+ 
+<section class="paralume-section2 ">
+    <div class="paralume-container">
+        <div class="paralume-image">
+            <!-- Inserisci qui l'immagine del paraschiena -->
+            <img src="../cima_aurora_portfolio/img/foto_figma/paralume_finito.png" alt="Paralume Betty Boop">
+        </div>
+
+        
+            <!-- Titoli sopra il box giallo -->
+             
+                <div class="progetti-header col-12 justify-content-center align-content-start">
+                <h2 class="progetti-title col-12">Paralume Betty-Boop </h2>
+                <div class="progetti-subtitle">Paralume Betty-Boop</div>
+                <div class="paralume-info col-12 justify-content-end margin-top:200px;"> 
+                <p class="paralume-description col-6 justify-content-center align-content-center">
+                    Commissionato dai professori di Laboratorio di Prodotto al primo anno di università, 
+                    questo progetto nasce dall'idea di dover rappresentare al meglio quelli che sono 
+                    stati gli anni '30 del Novecento all'interno di un paralume in cartone ondulato. 
+                    Dopo alcune ricerche, abbiamo optato per creare un paralume ispirato ad una delle 
+                    icone del momento Betty-Boop.
+                </p>
+            </div>
+            </div>
+            
+        <!-- Box giallo con descrizione -->
+            <div class="paralume-info col-6 justify-content-center"> 
+                <p class="paralume-description">
+                    Commissionato dai professori di Laboratorio di Prodotto al primo anno di università, 
+                    questo progetto nasce dall'idea di dover rappresentare al meglio quelli che sono 
+                    stati gli anni '30 del Novecento all'interno di un paralume in cartone ondulato. 
+                    Dopo alcune ricerche, abbiamo optato per creare un paralume ispirato ad una delle 
+                    icone del momento Betty-Boop.
+                </p>
+            </div>
+        </section>
+
+<!-- Ispirazioni Section -->
+<section class="ispirazioni-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="ispirazioni-title text-center">ISPIRAZIONI</h2>
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- Clara Bow Card -->
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="inspiration-card">
+                    <img src="../cima_aurora_portfolio/img/foto_figma/clara_bow.jpg" alt="Clara Bow" class="inspiration-image">
+                    <div class="inspiration-overlay">
+                        <div class="inspiration-content">
+                            <h3 class="inspiration-name">Clara Bow</h3>
+                            <p class="inspiration-description">Famosa attrice e showgirl americana.</p>
+                        </div>
+                    </div>
+                    <div class="yellow-stripe yellow-left"></div>
+                </div>
+            </div>
+            
+            <!-- Betty Boop Card -->
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="inspiration-card">
+                    <img src="../cima_aurora_portfolio/img/foto_figma/betty_boop_foto.jpg" alt="Betty Boop" class="inspiration-image">
+                    <div class="inspiration-overlay">
+                        <div class="inspiration-content">
+                            <h3 class="inspiration-name">Betty Boop</h3>
+                            <p class="inspiration-description">Icona femminile creata da Grim Natwick per i Fleischer Studios ispirandosi a Helen Kane.</p>
+                        </div>
+                    </div>
+                    <div class="yellow-stripe yellow-center"></div>
+                </div>
+            </div>
+            
+            <!-- Flappers Card -->
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="inspiration-card">
+                    <img src="../cima_aurora_portfolio/img/foto_figma/flappers.jpg" alt="Flappers" class="inspiration-image">
+                    <div class="inspiration-overlay">
+                        <div class="inspiration-content">
+                            <h3 class="inspiration-name">Flappers</h3>
+                            <p class="inspiration-description">Le giovani donne degli anni '20 che sfidavano i canoni di comportamento tradizionali.</p>
+                        </div>
+                    </div>
+                    <div class="yellow-stripe yellow-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- agorastoria Section -->
+  
+          <section class="paralume-section1 ">
+    <div class="paralume-container">
+        <div class="paralume-image">
+            <!-- Inserisci qui l'immagine del paraschiena -->
+            <img src="../cima_aurora_portfolio/img/foto_figma/agorastoria.png" alt="agorastoria logo">
+        </div>
+
+        
+            <!-- Titoli sopra il box giallo -->
+             
+                <div class="progetti-header col-12 justify-content-center align-content-start">
+                <h2 class="progetti-title col-12">Agorastoria </h2>
+                <div class="progetti-subtitle">Agorastoria</div>
+                <div class="paralume-info col-12 justify-content-end margin-top:200px;"> 
+                <p class="paralume-description col-6 justify-content-center align-content-center">
+                    Agor-a-storia nasce come progetto che ha come  scopo quello di dare un’ identità visiva al vecchio cinema Astoria di Rimini, ora diventato un Hub.
+                </p>
+            </div>
+            </div>
+            
+            
+            
+            <!-- Box giallo con descrizione -->
+            <div class="paralume-info col-6 justify-content-center"> 
+                <p class="paralume-description">
+                    Commissionato dai professori di Laboratorio di Prodotto al primo anno di università, 
+                    questo progetto nasce dall'idea di dover rappresentare al meglio quelli che sono 
+                    stati gli anni '30 del Novecento all'interno di un paralume in cartone ondulato. 
+                    Dopo alcune ricerche, abbiamo optato per creare un paralume ispirato ad una delle 
+                    icone del momento Betty-Boop.
+                </p>
+            </div>
+        
+    
+
+</section>
+
+<!-- Processo di Ricerca Section -->
+<section class="processo-ricerca-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="processo-title text-center">PROCESSO DI RICERCA</h2>
+            </div>
+        </div>
+        
+        <!-- Prima Riga di Loghi -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="yellow-stripe-bg">
+                    <div class="logos-container">
+                        <div class="logo-item">
+                            <img src="../cima_aurora_portfolio/img/foto_figma/logo4.png" alt="Agorastoria Logo 1">
+                        </div>
+                        <div class="logo-item">
+                            <img src="../cima_aurora_portfolio/img/foto_figma/agorastoria_logo2.png" alt="Agorastoria Logo 2">
+                        </div>
+                        <div class="logo-item">
+                            <img src="../cima_aurora_portfolio/img/foto_figma/logo6.png" alt="Agorastoria Logo 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Seconda Riga di Loghi -->
+        <div class="row">
+            <div class="col-12">
+                <div class="yellow-stripe-bg">
+                    <div class="logos-container">
+                        <div class="logo-item">
+                            <img src="../cima_aurora_portfolio/img/foto_figma/agoratoria_logo1.png" alt="Logo variante 1">
+                        </div>
+                        <div class="logo-item">
+                            <img src="../cima_aurora_portfolio/img/foto_figma/agorastoria_logo3.png " alt="Logo variante 2"    >
+                        </div>
+                        <div class="logo-item">
+                            <img src="../cima_aurora_portfolio/img/foto_figma/logo5.png" alt="Logo variante 3">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></div>
+</section>
+
+<!-- Paraschiena -->
+ 
+<section class="paralume-section ">
+    <div class="paralume-container">
+        <div class="paralume-image">
+            <!-- Inserisci qui l'immagine del paraschiena -->
+            <img src="../cima_aurora_portfolio/img/foto_figma/paraschiena.png" alt="Paraschiena png">
+        </div>
+
+        
+            <!-- Titoli sopra il box giallo -->
+             
+                <div class="progetti-header col-12 justify-content-center align-content-start">
+                <h2 class="progetti-title col-12">Paraschinena Sciatori </h2>
+                <div class="progetti-subtitle">Paraschiena Sciatori</div>
+                <div class="paralume-info col-12 justify-content-end margin-top:200px;"> 
+                <p class="paralume-description col-6 justify-content-center align-content-center">
+                    Abbiamo progettato un paraschiena in grado di proteggere lo sciatore in caso di urto durante caduta grazie all’ ausilio del programma 3d Fusion.
+                </p>
+            </div>
+            </div>
+            
+            
+            
+            <!-- Box giallo con descrizione -->
+            <div class="paralume-info col-6 justify-content-center"> 
+                <p class="paralume-description">
+                    Commissionato dai professori di Laboratorio di Prodotto al primo anno di università, 
+                    questo progetto nasce dall'idea di dover rappresentare al meglio quelli che sono 
+                    stati gli anni '30 del Novecento all'interno di un paralume in cartone ondulato. 
+                    Dopo alcune ricerche, abbiamo optato per creare un paralume ispirato ad una delle 
+                    icone del momento Betty-Boop.
+                </p>
+            </div>
+        
+    
+
+</section>
+<!-- Steps Section -->
+<section class="paralume-section margin-top:50px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="ispirazioni-title text-center">STEPS</h2>
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- Schizzo Card -->
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="inspiration-card">
+                    <img src="../Screenshot 2025-10-31 131056.png" alt="schizzo paraschiena" class="inspiration-image">
+                    <div class="inspiration-overlay">
+                        <div class="inspiration-content">
+                            <h3 class="inspiration-name">Schizzi Iniziali</h3>
+                            <p class="inspiration-description">Primi schizzi e prove del progetto.</p>
+                        </div>
+                    </div>
+                    <div class="yellow-stripe yellow-left"></div>
+                </div>
+            </div>
+            
+            <!-- Prima prova Card -->
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="inspiration-card">
+                    <img src="../cima_aurora_portfolio/img/foto_figma/paraschiena_non_def.png" alt="prova render" class="inspiration-image">
+                    <div class="inspiration-overlay">
+                        <div class="inspiration-content">
+                            <h3 class="inspiration-name">Prova 3d </h3>
+                            <p class="inspiration-description">Prima prova nel programma render Fusion360.</p>
+                        </div>
+                    </div>
+                    <div class="yellow-stripe yellow-center"></div>
+                </div>
+            </div>
+            
+            <!--Paraschiena definitivo Card -->
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="inspiration-card">
+                    <img src="../cima_aurora_portfolio/img/foto_figma/definitivo_paraschien.png" alt=" paraschiena definitivo" class="inspiration-image">
+                    <div class="inspiration-overlay">
+                        <div class="inspiration-content">
+                            <h3 class="inspiration-name">Il definitivo</h3>
+                            <p class="inspiration-description">Progetto definitivo con il render a colori.</p>
+                        </div>
+                    </div>
+                    <div class="yellow-stripe yellow-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Sezione Contatti -->
+<section class="contatti-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="contatti-title-container">
+                    <h2 class="contatti-title-main">CONTATTI</h2>
+                    <h2 class="contatti-title-overlay">Contatti</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="portfolio-footer">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <!-- Logo e Copyright -->
+            <div class="col-12 col-md-3">
+                <div class="footer-logo">A.C.</div>
+                <div class="footer-copyright">© 2024</div>
+                <div class="footer-links-mobile">
+                    <a href="#privacy" class="footer-link-mobile">Privacy</a>
+                    <span class="footer-separator">—</span>
+                    <a href="#cookies" class="footer-link-mobile">Cookies</a>
+                </div>
+            </div>
+            
+            <!-- Link Footer -->
+            <div class="col-12 col-md-9">
+                <div class="footer-nav">
+                    <a href="#chi-sono" class="footer-nav-link">Chi sono</a>
+                    <a href="#info" class="footer-nav-link">Info</a>
+                    <a href="#contatti" class="footer-nav-link">Contatti</a>
+                    <a href="#dove-trovarmi" class="footer-nav-link">Dove trovarmi</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Privacy e Cookies (Desktop) -->
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="footer-legal">
+                    <a href="#privacy" class="footer-legal-link">Privacy</a>
+                    <span class="footer-separator">—</span>
+                    <a href="#cookies" class="footer-legal-link">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</main>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // JavaScript per il menu a tendina
+    const menuToggle = document.getElementById('menuToggle');
+    const menuDropdown = document.getElementById('menuDropdown');
+    let isMenuOpen = false;
+
+    // Toggle menu al click
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            menuDropdown.classList.add('active');
+        } else {
+            menuDropdown.classList.remove('active');
+        }
+    });
+
+    // Hover: apre il menu
+    menuToggle.addEventListener('mouseenter', function() {
+        menuDropdown.classList.add('active');
+        isMenuOpen = true;
+    });
+
+    // Chiudi il menu quando si clicca fuori
+    document.addEventListener('click', function(e) {
+        if (!menuDropdown.contains(e.target) && !menuToggle.contains(e.target)) {
+            menuDropdown.classList.remove('active');
+            isMenuOpen = false;
+        }
+    });
+
+    // Mantieni il menu aperto quando il mouse è sopra
+    menuDropdown.addEventListener('mouseenter', function() {
+        menuDropdown.classList.add('active');
+        isMenuOpen = true;
+    });
+
+    // Chiudi il menu quando il mouse esce
+    menuDropdown.addEventListener('mouseleave', function() {
+        menuDropdown.classList.remove('active');
+        isMenuOpen = false;
+    });
+
+    // Chiudi menu quando si clicca su un link
+    const menuLinks = document.querySelectorAll('.menu-nav-link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menuDropdown.classList.remove('active');
+            isMenuOpen = false;
+        });
+    });
+</script>
+
+</body>
+</html>
